@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+.header {
+    position: fixed;
+    width: 100%;
+    height: 30vh;
+    left: 0;
+    top: -100%;
+    z-index: 2;
+    background-color: #fff;
+    transition: 850ms;
+}
+.header.active {
+    top: 0;
+    transition: 350ms;
+}
+.black-background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: black;
+    transition: 350ms;
+    opacity: 0;
+}
+.black-background.hidden {
+    pointer-events: all;
+    opacity: 0.4;
+    z-index: 1;
+    transition: 350ms;
+}
+.semi {
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10px 15px 10px 15px;
+    transition: 0.4s;
+    color: #bdbdbd;
+}
+.first-input {
+    color: black;
+}
+.second-input {
+    border-right: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+}
+.third-input {
+    color: #EB5757;
+}

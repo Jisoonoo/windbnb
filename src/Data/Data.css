@@ -1,0 +1,39 @@
+.cover-images {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.type {
+    font-size: 14px;
+    color: #828282;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.super-host {
+    color: #4f4f4f;
+    border: 1px solid #4f4f4f;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding: 6px;
+}
+.no-super-host {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+.rating {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.title {
+    max-width: 320px;
+    font-size: 16px;
+    font-weight: 600;
+}

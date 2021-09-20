@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import Data from './Data/Data'
 import './App.css';
+import Button from '@mui/material/Button'
+import Header from './Header/Header'
+import Box from '@mui/material/Box'
+import { Stack } from '@mui/material';
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box fullWidth>
+        <Header/>
+      </Box>
+      <h1>Stays in Finland</h1>
+      <Data/>
     </div>
   );
 }
