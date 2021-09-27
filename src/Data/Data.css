@@ -37,3 +37,22 @@
     font-size: 16px;
     font-weight: 600;
 }
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+}
+@media (min-width: 793px) {
+    .grid-container {
+        grid-template-columns: 1fr auto;
+    }
+}
+@media (min-width: 1193px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr auto
+    }
+}
+.box-container {
+    margin-top: 45px;
+    max-width: 320px;
+}

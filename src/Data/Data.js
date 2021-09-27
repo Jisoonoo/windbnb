@@ -11,7 +11,7 @@ function Data() {
     });
     
     const renderData = list.map((items, index) => (
-        <Grid item>
+        <div className='box-container' key={index}>
             <img src={items.photo} alt={items.title} key={index} className='cover-images'/>
             <Stack direction='row' spacing={0} justifyContent='flex-end' sx={{margin: '10px 0 10px 0'}}>
                 <Stack direction='row' spacing={items.superHost ? 2 : 0} justifyContent='flex-start' sx={{width: '100%'}}>
@@ -21,12 +21,12 @@ function Data() {
                 <div className='rating'><AiFillStar style={{color: '#eb5757', marginRight: '2px'}}/>{items.rating}</div>
             </Stack>
             <div className='title'>{items.title}</div>
-        </Grid>
+        </div>
     ))
     return(
-        <Grid fullWidth container rowSpacing={4} justifyContent='space-between' sx={{marginTop: '0px'}}>
+        <div className='grid-container'>
             {renderData}
-        </Grid>
+        </div>
     )
 }
 

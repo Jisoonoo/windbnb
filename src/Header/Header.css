@@ -1,54 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
-.header {
-    position: fixed;
-    width: 100%;
-    height: 30vh;
-    left: 0;
-    top: -100%;
-    z-index: 2;
-    background-color: #fff;
-    transition: 850ms;
-}
-.header.active {
-    top: 0;
-    transition: 350ms;
-}
-.black-background {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-color: black;
-    transition: 350ms;
-    opacity: 0;
-}
-.black-background.hidden {
-    pointer-events: all;
-    opacity: 0.4;
-    z-index: 1;
-    transition: 350ms;
-}
-.semi {
+.Header > div {
     font-family: 'Mulish', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.Header {
+    width: 100%;
+    display: flex;
+    height: 40px;
+    justify-content: flex-end;
+    margin-top: 30px;
+    transition: 550ms;
+    /* border: 1px solid black; */
+}
+.Header.hd-shown {
+    height: 400px;
+    transition: 550ms;
+}
+.search-bar-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 0;
+    height: 40px;
+    border: 1px solid #fafbfd;
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0);
+    transition: 900ms;
+}
+.search-bar-container.sb-shown {
+    width: 100%;
+    transition: 550ms;
+    height: 60px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+.button {
+    width: auto;
+    height: auto;
+    transition: 550ms;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #eb5757;
     display: flex;
     justify-content: center;
+    background-color: #fafbfd;
     align-items: center;
-    width: auto;
-    padding: 10px 15px 10px 15px;
-    transition: 0.4s;
-    color: #bdbdbd;
+    border: 1px solid #eb5757;
+    box-shadow: 2px 1px 6px rgba(0, 0, 0, 0.1);
 }
-.first-input {
+.button.bt-shown {
+    color: #fff;
+    background-color: #eb5757;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #eb5757;
+    color: #fff;
+}
+.location-menu {
+    width: 0%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+    white-space: nowrap;
+    justify-content: center;
+    padding: 0px 25px;
+    align-items: flex-start;
+    transition: 550ms;
+}
+.title {
+    font-weight: 800;
+    font-size: 9px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    /* border: 1px solid black; */
     color: black;
 }
-.second-input {
+.pholder {
+    /* border: 1px solid red; */
+    padding: 12px 0px 0px 0px;
+    width: 100%;
+    color: #bdbdbd;
+}
+.location-menu.loc-shown {
+    width: calc(47% - 50px);
+    opacity: 1;
+    transition: 550ms;
+}
+.guest-menu {
+    width: 0%;
+    height: auto;
+    white-space: nowrap;
+    transition: 550ms;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 25px;
+    align-items: flex-start;
+    pointer-events: none;
     border-right: 1px solid #f2f2f2;
     border-left: 1px solid #f2f2f2;
 }
-.third-input {
-    color: #EB5757;
+.guest-menu.gue-shown {
+    width: calc(47% - 50px);
+    opacity: 1;
+    transition: 550ms;
+}
+.logo-container {
+    width: 100%;
+    pointer-events: none;
+    opacity: 1;
+    transition: 550ms;
+}
+.logo {
+    width: auto;
+    z-index: -1;
+    height: 20px;
+}
+.logo-container.lc-shown{
+    width: 0%;
+    transition: 550ms;
+    opacity: 0;
 }

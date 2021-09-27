@@ -1,57 +1,30 @@
 import './Header.css'
-import Button from '@mui/material/Button'
 import { useState } from 'react';
-import Box from '@mui/material/Box'
-import logo from '../logo.svg'
 import {BiSearchAlt} from 'react-icons/bi'
-import Stack from '@mui/material/Stack'
+import logo from '../logo.svg'
 
 function Header() {
-    
-    const [isShown, setHeaderState] = useState(false)
-    const [Timer, setTimerState] = useState(false)
-    function open() {
-        if(isShown) {
-            setTimerState(!Timer)
-            setTimeout(() => {
-                setHeaderState(!isShown);
-            }, 100);
-        }
-        else {
-            setHeaderState(!isShown)
-            setTimeout(() => {
-                setTimerState(!Timer);
-            }, 100);
-        }
-    }
 
-    const buttonStyle = {
-        width: 'fit-content',
-        height: 'fit-content',
-        display: 'flex',
-        alignItems: 'center',
-        border: '1px solid #F2F2F2',
-        borderRadius: '10px',
-        boxShadow: '0px 1px 4px rgba(0,0,0,0.1)',
-        transition: '0.4s',
-        zIndex: '3',
-        '&:hover': {
-            boxShadow: '0px 3px 8px rgba(0,0,0,0.1)'
-        }
-    }
+    const [setHeader, setHeaderState] = useState(false);
+
+    const showHeader = () => setHeaderState(!setHeader);
 
     return(
-        <div className='Header'>
-            <div className={isShown ? 'header active' : 'header'}/>
-            <div className={Timer ? 'black-background hidden' : 'black-background'} onClick={open}/>
-            <Box fullWidth sx={{display: 'flex', justifyContent: 'space-between', padding: '30px 0 30px 0'}}>
-                <img src={logo} alt='logo'/>
-                <Stack direction='row' spacing={0} onClick={open} sx={buttonStyle}>
-                    <div className='first-input semi'>Add location</div>
-                    <div className='second-input semi'>Add guest</div>
-                    <div className='third-input semi'><BiSearchAlt/></div>
-                </Stack>
-            </Box>
+        <div className={setHeader ? 'Header hd-shown' : 'Header'}>
+            <div className={setHeader ? 'logo-container lc-shown' : 'logo-container'} >
+                <img src={logo} alt='logo' className='logo'/>
+            </div>
+            <div className={setHeader ? 'search-bar-container sb-shown' : 'search-bar-container'}>
+                <div className={setHeader ? 'location-menu loc-shown' : 'location-menu'}>
+                    <div className='title'>Location</div>
+                    <div className='pholder'>Add location</div>
+                </div>
+                <div className={setHeader ? 'guest-menu gue-shown' : 'guest-menu'}>
+                    <div className='title'>Guest</div>
+                    <div className='pholder'>Add guest</div>
+                </div>
+                <div className={setHeader ? 'button bt-shown' : 'button'} onClick={showHeader}><BiSearchAlt/></div>
+            </div>
         </div>
     );
 }
